@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reading List</title>
+  </head>
+  <body>
+    <h1>Reading List</h1>
+    <form method="post">
+      <input type="url" name="url" placeholder="Enter article URL" required>
+      <button type="submit">Save</button>
+    </form>
+    <ul>
+      {% for id, title in articles %}
+      <li><a href="{{ url_for('article', article_id=id) }}">{{ title }}</a></li>
+      {% else %}
+      <li>No articles saved yet.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
