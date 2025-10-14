@@ -3,9 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Reading List</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; line-height: 1.5; padding: 0 1rem; }
+      form { margin-bottom: 1.5rem; display: flex; gap: 0.5rem; }
+      input[type="url"] { flex: 1; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+      button { padding: 0.5rem 1rem; border: none; border-radius: 4px; background-color: #1f6feb; color: #fff; cursor: pointer; }
+      button:hover { background-color: #1158c7; }
+      ul { list-style: none; padding: 0; }
+      li { margin-bottom: 0.75rem; }
+      a { color: #1f6feb; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .error { background: #fee; color: #b30000; padding: 0.75rem 1rem; border: 1px solid #f5c2c7; border-radius: 4px; margin-bottom: 1rem; }
+    </style>
   </head>
   <body>
     <h1>Reading List</h1>
+    <p>Save any article URL to view it later in a clean, reader-friendly layout.</p>
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
     <form method="post">
       <input type="url" name="url" placeholder="Enter article URL" required>
       <button type="submit">Save</button>

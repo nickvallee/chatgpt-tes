@@ -1,3 +1,4 @@
 Flask
-readability-lxml
+beautifulsoup4
+html5lib
 requests
